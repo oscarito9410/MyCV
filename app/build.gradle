@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+def globalConf = rootProject.ext
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.booleansystems.mycv"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+
+
+    Map<String, String> dependencies = globalConf.dependencies;
+
+    implementation dependencies.appCompat
+    implementation dependencies.recyclerView
+    implementation dependencies.cardView
+    implementation dependencies.supportV4
+    implementation dependencies.supportDesign
+    implementation dependencies.constraintLayout
+
+
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverterGson
+    implementation dependencies.retrofitAdapterRxJava
+    implementation dependencies.okhttp
+    implementation dependencies.okhttpLogging
+
+    implementation dependencies.stetho
+    implementation dependencies.stethoOkhttp
+    implementation dependencies.stethoOkhttp
+
+
+    implementation dependencies.glide
+    annotationProcessor dependencies.glideAnnotation
+    implementation dependencies.circleImage
+
+    androidTestImplementation dependencies.testRunner
+    androidTestImplementation dependencies.espressoCore
+
+
+    implementation dependencies.koin
+    implementation dependencies.lottie
+
+    implementation project(':usecase')
+    implementation project(':data')
+    implementation project(':domain')
+
+
+    testImplementation dependencies.robolEletrict
+    testImplementation dependencies.mockito
+    testImplementation dependencies.mockitoKotlin
+
+
+}

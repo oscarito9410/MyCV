@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My CV</string>
+    <string name="text_website">Website</string>
+    <string name="text_linkedin">Linkedin</string>
+    <string name="text_github">Github</string>
+    <string name="title_skills">Skills</string>
+    <string name="title_experience">Experience</string>
+    <string name="error_no_internet_connection_found">No internet connection found. Please verify that your internet
+        connection is available
+    </string>
+</resources>
