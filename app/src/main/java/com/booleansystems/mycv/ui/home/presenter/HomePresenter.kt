@@ -42,6 +42,7 @@ open class HomePresenter(private val extractResumeinformationUseCase: ExtractRes
 
     fun notifyNoInternetAvailable() {
         view()!!.onNoInternetAvailable()
+        view()!!.hideProgressDialog()
     }
 
     fun setInformationSuccess() {
