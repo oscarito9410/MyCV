@@ -9,4 +9,6 @@
     <string name="error_no_internet_connection_found">No internet connection found. Please verify that your internet
         connection is available
     </string>
+    <string name="error_http_connection">An http connection error occurred. Please verify your connection</string>
+    <string name="error_timeout_connection">An timeout error occurred. Please verify your connection</string>
 </resources>

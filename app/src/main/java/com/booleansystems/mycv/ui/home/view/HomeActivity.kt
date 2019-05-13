@@ -21,7 +21,7 @@ import com.booleansystems.mycv.ui.home.presenter.HomePresenter
 import com.booleansystems.mycv.ui.home.view.adapter.SkillsAdapter
 import com.booleansystems.mycv.ui.home.view.adapter.WorkAdapter
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.android.ext.android.inject
 
 
@@ -35,7 +35,7 @@ class HomeActivity : BaseActivity(), HomeContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
         mPresenter.attachView(this, lifecycle)
         mPresenter.getResumeInfo(this.isConnected)
         initListManager()
@@ -45,7 +45,8 @@ class HomeActivity : BaseActivity(), HomeContract.View {
     fun initListManager() {
         if (mAdapterSkills == null) mAdapterSkills = SkillsAdapter(this, emptyList<String>().toMutableList())
         if (mAdapterWork == null) mAdapterWork = WorkAdapter(this, emptyList<Work>().toMutableList())
-        rv_skills.layoutManager = GridLayoutManager(this, if (isPortrait()) 4 else 2, GridLayoutManager.HORIZONTAL, false)
+        rv_skills.layoutManager =
+            GridLayoutManager(this, if (isPortrait()) 4 else 2, GridLayoutManager.HORIZONTAL, false)
         rv_skills.adapter = mAdapterSkills
         rv_work_experience.layoutManager = LinearLayoutManager(this)
         rv_work_experience.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
@@ -58,6 +59,7 @@ class HomeActivity : BaseActivity(), HomeContract.View {
         Glide.with(this).load(basics.picture)
             .override(60, 60)
             .fitCenter()
+            .thumbnail(0.5f)
             .into(iv_profile_image)
     }
 
@@ -103,7 +105,15 @@ class HomeActivity : BaseActivity(), HomeContract.View {
         showSnackBar(sv_container_parent, R.string.error_no_internet_connection_found)
     }
 
-    override fun onHttpError(message: String) {
+    override fun onHttpError() {
+        showSnackBar(sv_container_parent, R.string.error_http_connection)
+    }
+
+    override fun onTimeoutError() {
+        showSnackBar(sv_container_parent, R.string.error_timeout_connection)
+    }
+
+    override fun onGeneralError(message: String) {
         showSnackBar(sv_container_parent, message)
     }
 }

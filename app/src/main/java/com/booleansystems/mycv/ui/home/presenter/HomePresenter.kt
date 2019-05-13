@@ -7,6 +7,8 @@ import com.booleansystems.mycv.ui.home.contract.HomeContract
 import com.booleansystems.mycv.ui.home.mapper.Resume
 import com.booleansystems.mycv.ui.home.mapper.toPresentationModel
 import com.booleansystems.usecase.ExtractResumeInformationUseCase
+import retrofit2.HttpException
+import java.net.SocketTimeoutException
 import com.booleansystems.domain.entities.Resume as DomainResume
 
 /**
@@ -62,7 +64,15 @@ open class HomePresenter(private val extractResumeinformationUseCase: ExtractRes
 
     override fun onError(error: Throwable) {
         view()!!.hideProgressDialog()
-        view()!!.onHttpError(error.message!!)
+        when (error) {
+            is HttpException ->
+                view()!!.onHttpError()
+            is SocketTimeoutException ->
+                view()!!.onTimeoutError()
+            else ->
+                view()!!.onGeneralError(error.message!!)
+
+        }
     }
 
 }

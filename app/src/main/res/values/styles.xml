@@ -9,4 +9,19 @@
         <item name="android:fontFamily">@font/googlesans_regular</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
+
+    <style name="TextViewTitleStyle">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:layout_marginTop">@dimen/big_separation</item>
+        <item name="android:layout_marginBottom">@dimen/big_separation</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="CardViewDefaultStyle">
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardCornerRadius">@dimen/default_corner_radius</item>
+        <item name="cardElevation">@dimen/default_card_elevation</item>
+        <item name="contentPadding">@dimen/small_separation_3</item>
+        <item name="android:padding">@dimen/small_separation_3</item>
+    </style>
 </resources>

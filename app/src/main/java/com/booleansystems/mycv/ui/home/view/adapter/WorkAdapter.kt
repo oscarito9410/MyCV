@@ -50,7 +50,7 @@ class WorkAdapter(private val context: Context, private val workItems: MutableLi
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun setData(context: Context, item: Work) {
             Glide.with(context).load(item.urlImage)
-                .fitCenter().into(itemView.iv_work_company)
+                .fitCenter().thumbnail(0.5f).into(itemView.iv_work_company)
             itemView.tv_work_position.text = item.position
             itemView.tv_work_init_date_end_date.text =
                 context.getString(R.string.text_date_template_format, item.startDate, item.endDate)

@@ -42,9 +42,19 @@ interface HomeContract {
         fun onNoInternetAvailable()
 
         /**
-         * Notify when an unhandler http error happen. For example 404, 500,timeout, etc.
+         * Notify when an  http error happen. For example 404, 500
          */
-        fun onHttpError(message: String)
+        fun onHttpError()
+
+        /**
+         * Notify about  timeout error
+         */
+        fun onTimeoutError()
+
+        /**
+         * Notify when an unhandled error happen
+         */
+        fun onGeneralError(message: String)
 
         /**
          * Send basic information from Resume

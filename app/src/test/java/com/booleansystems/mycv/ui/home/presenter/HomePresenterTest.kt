@@ -136,7 +136,7 @@ class HomePresenterTest {
     fun testFNotSuccesResumeResponse() {
         mEnabledSuccessResponse = false
         mPresenter!!.getResumeInfo(true)
-        verify(mMockView).onHttpError(any())
+        verify(mMockView).onGeneralError(any())
     }
 
 }

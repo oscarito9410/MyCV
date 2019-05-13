@@ -54,7 +54,7 @@
     <dimen name="height_lottie_loading">120dp</dimen>
     <dimen name="text_size_title">16sp</dimen>
     <dimen name="default_corner_radius">4dp</dimen>
-    <dimen name="default_card_elevation">4dp</dimen>
+    <dimen name="default_card_elevation">5dp</dimen>
     <dimen name="default_width_profile_iv">64dp</dimen>
     <dimen name="default_heght_profile_iv">64dp</dimen>
     <dimen name="small_separation_2">2dp</dimen>
