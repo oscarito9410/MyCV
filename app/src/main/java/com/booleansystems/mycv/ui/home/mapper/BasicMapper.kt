@@ -60,6 +60,6 @@ data class Basics(
 
 fun DomainBasics.toPresentationModel(): Basics = Basics(
     name, label, picture, email, phone, website, summary, profiles!!.firstOrNull {
-        it.network == "Linkedin"
-    }!!.url, profiles!!.firstOrNull { it.network == "GitHub" }!!.url
+        it.network.equals("linkedin", true)
+    }!!.url, profiles!!.firstOrNull { it.network.equals("github", true) }!!.url
 )

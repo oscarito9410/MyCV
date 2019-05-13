@@ -9,7 +9,7 @@ open class Basics(
     @SerializedName("picture") val picture: String?,
     @SerializedName("email") val email: String?,
     @SerializedName("phone") val phone: String?,
-    @SerializedName("urlImage") val website: String?,
+    @SerializedName("website") val website: String?,
     @SerializedName("summary") val summary: String?,
     @SerializedName("profiles") val profiles: List<Profiles>?
 )

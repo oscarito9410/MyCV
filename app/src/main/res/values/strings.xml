@@ -5,6 +5,7 @@
     <string name="text_github">Github</string>
     <string name="title_skills">Skills</string>
     <string name="title_experience">Experience</string>
+    <string name="text_date_template_format">%1$s-%2$s</string>
     <string name="error_no_internet_connection_found">No internet connection found. Please verify that your internet
         connection is available
     </string>

@@ -52,7 +52,8 @@ class WorkAdapter(private val context: Context, private val workItems: MutableLi
             Glide.with(context).load(item.urlImage)
                 .fitCenter().into(itemView.iv_work_company)
             itemView.tv_work_position.text = item.position
-            itemView.tv_work_init_date_end_date.text = "${item.startDate}-${item.endDate}"
+            itemView.tv_work_init_date_end_date.text =
+                context.getString(R.string.text_date_template_format, item.startDate, item.endDate)
             itemView.tv_work_company.text = item.company
             itemView.tv_work_summary.text = item.summary
         }
