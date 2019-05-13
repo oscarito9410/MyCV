@@ -43,12 +43,9 @@ class HomeActivity : BaseActivity(), HomeContract.View {
 
 
     fun initListManager() {
-        if (mAdapterSkills == null) mAdapterSkills =
-            SkillsAdapter(this, emptyList<String>().toMutableList())
-        if (mAdapterWork == null) mAdapterWork =
-            WorkAdapter(this, emptyList<Work>().toMutableList())
-        rv_skills.layoutManager =
-            GridLayoutManager(this, if (isPortrait()) 4 else 2, GridLayoutManager.HORIZONTAL, false)
+        if (mAdapterSkills == null) mAdapterSkills = SkillsAdapter(this, emptyList<String>().toMutableList())
+        if (mAdapterWork == null) mAdapterWork = WorkAdapter(this, emptyList<Work>().toMutableList())
+        rv_skills.layoutManager = GridLayoutManager(this, if (isPortrait()) 4 else 2, GridLayoutManager.HORIZONTAL, false)
         rv_skills.adapter = mAdapterSkills
         rv_work_experience.layoutManager = LinearLayoutManager(this)
         rv_work_experience.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))

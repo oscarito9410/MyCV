@@ -59,3 +59,7 @@ P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 x
 Happ/src/main/java/com/booleansystems/mycv/ui/home/mapper/SkillsMapper.kt,5/9/59b46e29ea6644fc05fe329d294ab435fd2b21eb
+C
+dependencies.gradle,9/2/9282de42fdd92f96bfdaa8eed76823d133cf1624
+v
+Fapp/src/main/java/com/booleansystems/mycv/ui/home/view/HomeActivity.kt,1/2/127d7b114c212f2b291ab8c77657f07b3e6dc40b

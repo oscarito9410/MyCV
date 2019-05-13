@@ -62,9 +62,6 @@ dependencies {
     annotationProcessor dependencies.glideAnnotation
     implementation dependencies.circleImage
 
-    androidTestImplementation dependencies.testRunner
-    androidTestImplementation dependencies.espressoCore
-
 
     implementation dependencies.koin
     implementation dependencies.lottie
@@ -74,6 +71,8 @@ dependencies {
     implementation project(':domain')
 
 
+    androidTestImplementation dependencies.testRunner
+    androidTestImplementation dependencies.espressoCore
     testImplementation dependencies.robolEletrict
     testImplementation dependencies.mockito
     testImplementation dependencies.mockitoKotlin
